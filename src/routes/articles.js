@@ -60,7 +60,7 @@ router.get("/search", validateSearch, searchArticles);
  *     parameters:
  *       - in: query
  *         name: categorie
- *         schema: { type: string }
+ *         schema: { type: string } 
  *         description: Filtre par catégorie
  *         example: "Tech"
  *       - in: query
