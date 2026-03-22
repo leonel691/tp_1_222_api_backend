@@ -1,0 +1,21 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Article {
+  /// Clé primaire : unique pour chaque article (ObjectId MongoDB généré à la création).
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  titre     String
+  contenu   String
+  auteur    String
+  date      DateTime @default(now())
+  categorie String
+  tags      String[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
